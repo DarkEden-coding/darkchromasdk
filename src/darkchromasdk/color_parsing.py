@@ -3,6 +3,11 @@ class DeviceError(Exception):
 
 
 def parse_rgb(color):
+    """
+    parse rgb color to int
+    :param color: color to parse
+    :return:
+    """
     if isinstance(color, (list, tuple)) and len(color) == 3:
         if min(color) >= 0 and max(color) <= 255:
             return (int(color[2]) << 16) | (int(color[1]) << 8) | int(color[0])
@@ -13,6 +18,11 @@ def parse_rgb(color):
 
 
 def parse_hex(color):
+    """
+    parse hex color to int (no #)
+    :param color: color to parse
+    :return:
+    """
     if isinstance(color, str) and 5 < len(color) < 8:
         try:
             return (int(color[-2:], base=16) << 16) | (int(color[-4:-2], base=16) << 8) | int(color[-6:-4], base=16)
