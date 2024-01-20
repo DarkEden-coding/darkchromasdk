@@ -3,7 +3,7 @@ from time import sleep
 import requests
 import keyboard
 import json
-from color_parsing import parse_rgb
+from .color_parsing import parse_rgb
 from pynput.mouse import Listener
 
 global middle_mouse_pressed
